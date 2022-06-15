@@ -11,10 +11,14 @@ function ProductView({ products }) {
     const [sideOpen, setSideOpen] = useState(true);
     const [selectedProduct, setSelectedProduct] = useState()
     useEffect(()=> {
+        // console.log(`selectedProduct CHANGED TO`, selectedProduct);
+        if(selectedProduct)
         setSideOpen(true);
     }, [selectedProduct])
 
     useEffect(()=>{
+        // console.log(`sideOpen CHANGED TO`, sideOpen);
+        if(!sideOpen)
         setSelectedProduct();
         },[sideOpen])
 
